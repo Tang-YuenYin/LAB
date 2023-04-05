@@ -1,0 +1,53 @@
+package LinkedList;
+public class TestLinkedList {
+    public static void main(String[] args) {
+        MyLinkedList<Character> myLinkedList = new MyLinkedList<>();
+    
+    //append a,b,c,d
+    myLinkedList.addLast('a');
+    myLinkedList.addLast('b');
+    myLinkedList.addLast('c');
+    myLinkedList.addLast('d');
+    myLinkedList.addLast('e');
+    
+    //print all the element
+        System.out.println("All the element in the list");
+        myLinkedList.print();
+        
+     // reverse all the elements in the list
+        System.out.print("All the elements in the list in reverse order: ");
+        myLinkedList.reverse();
+        
+      // retrieve the number of elements in the list
+        System.out.println( "Size: " + myLinkedList.getSize());
+
+        // retrieve the first and last value
+        System.out.println("First element: " + myLinkedList.getFirst());
+        System.out.println("Last element : " + myLinkedList.getLast());
+        
+        //testing middle value
+        System.out.println("Middle value: "+myLinkedList.getMiddleValue());
+        
+        //delete the third value
+        System.out.println("Value removed: "+ myLinkedList.remove(2));
+        System.out.println("After removing third value");
+        myLinkedList.print();
+        
+         // Retrieve the index location for the second and third value.
+        System.out.println("Index of 2nd value: " + myLinkedList.indexOf('b'));
+        System.out.println("Index of 3rd value: " + myLinkedList.indexOf('c'));
+        
+         // check if the list has the value c
+        System.out.println("List has value 'c': " + myLinkedList.contains('c'));
+        
+         // Replace the items individually with the following: h,e,l,l,o.
+        char[] letters = {'j', 'a', 'v', 'a'};
+        for (int i = 0; i < letters.length; i++) {
+            myLinkedList.set(i, letters[i]);
+        }
+        myLinkedList.print();
+        
+        //testing middle value
+        System.out.println("Middle value: "+myLinkedList.getMiddleValue());
+    }
+}
