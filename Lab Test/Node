@@ -1,0 +1,64 @@
+public class Node <E>{
+    private E  value; //Store the individuals details
+    private String edgeName1;//Store first relationship
+    private String edgeName2;//Store second relationship
+    private Node<E> edgeNode1;//Store first relationship person name
+    private Node<E> edgeNode2;//Store second relationship person name
+    
+    public Node(E e)
+    {
+        value=e;
+    }
+    
+    //to get the first relationship with first Person
+    public void setEdge1(String edgeName, Node<E> node)
+    {
+        this.edgeName1=edgeName;
+        this.edgeNode1=node;  
+    }
+    
+     //to get the second relationship with second Person
+    public void setEdge2(String edgeName, Node<E> node)
+    {
+        this.edgeName2=edgeName;
+        this.edgeNode2=node;  
+    }
+    
+    //toget value of the individual
+    public E getValue()
+    {
+        return value;
+    }
+    
+    //print tree
+    public void printEdgesAndNodes()
+    {
+        System.out.println("-----------------------");
+        System.out.println(value);
+        System.out.println(" :"+edgeName1+"->");
+        System.out.println("   "+edgeNode1.value);
+        System.out.println(" :"+edgeName2+"->");
+        System.out.println("   "+edgeNode2.value);
+        System.out.println("-----------------------");
+        System.out.println("");
+    }
+    
+    //Task 3
+    //to check which relationship suits the characteristics of the killer
+    public Node<E>traverse(String edgeName)
+    {
+        Node<E>result=this;
+        
+        if(edgeName1.equals(edgeName))
+        {
+            result= edgeNode1;
+        }
+        
+        else if(edgeName2.equals(edgeName))
+        {
+            result= edgeNode2;
+        }
+        
+        return result;
+    }
+}
