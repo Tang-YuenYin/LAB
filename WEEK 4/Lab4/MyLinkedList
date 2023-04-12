@@ -20,18 +20,21 @@ public class MyLinkedList<E>{
        
        if(tail==null)
        {
-           tail=head;
+           tail=head;  
+           //tail=newNode;
        }
     }
     
     public void addLast(E e)
     {
       Node<E>  newNode=new Node<E>(e);
-      
+      //If linked list is empty
       if(tail==null)
       {
           head=tail=newNode;
       }
+      
+      //If linked list is not empty
       else
       {
           tail.next=newNode;
@@ -42,12 +45,16 @@ public class MyLinkedList<E>{
     
     public void add(int index,E e)
     {
-       if(index==0)
+    //check if index is empty
+       if(index==0)//if(head==null||index==0)
            addFirst(e);
-       else if(index>=size)
+    //check if index is bigger than size of the list     
+       else if(index>=size)//index>size-1
            addLast(e);
+   //If the index is in the first or middle of the linked list
        else
        {
+       //Declare current value variable as pointer to the target index
            Node<E>current=head;
            for(int i=0;i<index;i++)
            {
@@ -62,12 +69,16 @@ public class MyLinkedList<E>{
     
     public E removeFirst()
     {
-       if(size==0)
+    //check if linked list is empty
+       if(size==0)//if(head==null)
        {
            return null;
        }
+       //If linked list is not empty 
        else{
+       //Save result pf head element since will be unable to access after removing
            Node<E> temp=head;
+           //set head pointer to the second node 
            head=head.next;
            size--;
            if(head==null)
@@ -80,10 +91,12 @@ public class MyLinkedList<E>{
     
     public E removeLast()
     {
-       if(size==0)
+    //Check if the list is empty
+       if(size==0)//if(head==null)
        {
            return null;
        }
+      
        else if(size==1){
            Node<E>temp=head;
            head=tail=null;
@@ -91,12 +104,21 @@ public class MyLinkedList<E>{
            return temp.element;
        }
        else{
+        //Save result pf head element since will be unable to access after removing
            Node<E>current=head;
            
            for(int i=0;i<size-2;i++)
            {
                current=current.next;
            }
+           
+           /*
+           while(current.next.next!=null)
+           {
+            current=current.next;
+           }
+           */
+           
            Node<E>temp=tail;
            tail=current;
            tail.next=null;
@@ -118,13 +140,14 @@ public class MyLinkedList<E>{
       else {
           Node<E>previous=head;
           
+          //Go to node b4 target node
           for(int i=1;i<index;i++)
           {
               previous=previous.next;
           }
           
           Node<E>current=previous.next;
-          
+          //set the current next pointer to the next next node( remove referenve for deletion)
           previous.next=current.next;
           size--;
           
@@ -136,19 +159,26 @@ public class MyLinkedList<E>{
     {
         boolean found=false;
         Node<E>current=head;
+        //Chcek if it is empty
+        //Go through whole linked list
         while(!found&&current!=null)
         {
+        //check whether current.element = e
             if(current.element.equals(e))
                 found=true;
             
+            //Go to next node  like i++
             current=current.next;
         }
+        //No equals element = false
         return found;
     }
     
     public E get(int index)
     {
+    //need add get First code and getLast code
         Node<E>current=head;
+        //this is foer if the things is in the middle
         for(int i=0;i<index;i++)
         {
             current=current.next;
@@ -177,10 +207,13 @@ public class MyLinkedList<E>{
     public int indexOf(E e)
     {
         int result=-1;
+        //check if head is empty return -1
         Node<E>current=head;
+        
+        //for loop that go through the whole linked list
         if(current!=null)
         {
-            for(int i=0;i<size;i++)
+            for(int i=0;i<size;i++)//for int i=0;i< size, current!=null;i++,current=current.next) break once current is null
             {
                 if(current.element.equals(e))
                 {
@@ -196,6 +229,7 @@ public class MyLinkedList<E>{
     
     public int lastindexOf(E e)
     {
+    //we declare result=-1 means index value not found 
         int result=-1;
         Node<E>current=head;
         for(int i=0;i<size;i++)
@@ -210,11 +244,13 @@ public class MyLinkedList<E>{
     
     public E set(int index, E e)
     {
+    //check if linked list is empty
        if(index<0||index>=size) 
            return null;
        
        Node<E> current=head;
        
+       //Chcek if index is bigger than linked list 
        if(current==null)
        {
            return null;
@@ -232,6 +268,15 @@ public class MyLinkedList<E>{
     
     public void clear()
     {
+    
+    //Set head and tail to null to remove reference
+    //garbage collector
+    /*
+    head=null;
+    rail=null;
+    size=0;
+    */
+
        while(size>0)
        {
            removeLast();
@@ -252,6 +297,7 @@ public class MyLinkedList<E>{
     
     public void reverse()
     {
+    //check linked list is empty
         Node<E> current=head;
         Node<E>last=null;
         while(last!=head)
@@ -269,6 +315,37 @@ public class MyLinkedList<E>{
         }
         System.out.println();
     }
+    
+    /*
+    public void reverse()
+    {
+    //check if linked list is empty
+    if(head==null)
+    return;
+    
+    Node<E> curr=head;
+    Node<E>prev=null;
+    Node<E>next;
+    //Go through each node
+    while(curr.next!=null)
+    //Save the next node into the next variable
+    next=curr.next;
+    //Set the current next pointer to the previous node
+    curr.next=prev;
+    //set the previous node to the current node (for the next iteration)
+    prev=current;
+    //Go to the next node
+    curent=next;
+    }
+    
+    //Set the next pointer of the last node manually since will exit the while loop early during the second last node
+    curr.next=prev;
+    //Swap haed with tail
+    Node<E>oldtail=tail;
+    tail=head;
+    head=oldtail
+    }
+    */
     
     public E getMiddleValue()
     {
