@@ -1,0 +1,112 @@
+public class SinglyList <E>{
+  private int size;
+    public Node<E>head;
+    public Node<E>tail;
+    
+    public SinglyList()
+    {
+      size=0;
+      head=null;
+      tail=null;
+    }  
+    
+    public void add(E e)
+    {
+        Node<E>newNode=new Node<>(e);
+        if(head==null)
+        {
+            head=tail=newNode;
+            size++;
+        }
+        
+       else
+        {
+            tail.next=newNode;
+            tail=tail.next;
+            size++;
+        }
+    }
+    
+ 
+    
+        public void removeElement(E e) {
+        if (size == 0) {
+            throw new IllegalStateException();
+        }
+
+        Node<E> current;
+        if (head.element.equals(e)) {
+            current = head;
+            head = head.next;
+        }
+        else {
+            Node<E> previous = head;
+            while (!previous.next.element.equals(e)) {
+                previous = previous.next;
+            }
+            current = previous.next;
+            previous.next = current.next;
+        }
+        size--;
+        System.out.println(current.element);
+    }
+    public void printList()
+    {
+        Node<E>current=head;
+        for(int i=0;i<size;i++)
+        {
+            System.out.print(current.element);
+            
+             if(i==size-1)
+                System.out.print(".");
+            else
+                System.out.print(", ");
+            current=current.next;
+        }
+        System.out.println("");
+    }
+    
+    public int getSize()
+    {
+        return size;
+    }
+    
+    public boolean contains(E e)
+    {
+
+        Node<E>current=head;
+        if(current==null)
+            return false;
+        
+        for(int i=0;i<size;i++)
+        {
+            if(current.element.equals(e))
+            {
+                return true;
+            }
+            current=current.next;
+        }
+        return false;
+    }       
+
+   public void replace(E e, E newE) {
+        Node<E> current = head;
+        while (!current.element.equals(e)) {
+            current = current.next;
+        }
+        current.element = newE;
+    }
+}
+class Node <E>{
+    E element;
+    Node<E>next;
+    
+    public Node(){}
+    
+    public Node(E e)
+    {
+        element=e;
+        next=null;
+    }
+    
+}
