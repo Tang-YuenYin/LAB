@@ -1,0 +1,28 @@
+
+package SList;
+public class TestSList {
+    public static void main(String[] args) {
+        SList<String> tester=new SList<>();
+        
+        //Append values
+        tester.appendend("Linked list");
+        tester.appendend("is");
+        tester.appendend("easy");
+        
+        //Display
+        tester.display();
+        
+        //Remove "Linked List" 
+        System.out.println("Removed: "+tester.removeInitial());
+        
+        
+        //Check difficult
+        System.out.println("Check \"difficult\"? "+tester.contains("difficult"));
+        
+        //Clear list
+        tester.clear();
+        
+        //Display
+        tester.display();
+    }
+}
