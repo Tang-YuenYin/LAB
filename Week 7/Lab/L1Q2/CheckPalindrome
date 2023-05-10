@@ -1,0 +1,46 @@
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+public class Q2 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter String: ");
+        String s1=sc.nextLine();
+        
+        Queue q1=new LinkedList();
+        //Add to queue
+        for(int i=s1.length()-1;i>-1;i--)
+        {
+            q1.add(s1.charAt(i));
+        }
+        
+        //to store rev s1
+        String revs1="";
+        
+        //Reverse String
+        while(!q1.isEmpty())
+        {
+           revs1+=q1.remove();
+            //revs1+=q1.poll();
+        }
+        System.out.println(revs1);
+        //Check Palindrome
+        if(checkPalindrome(s1,revs1))
+            System.out.println("It is Palindrome");
+        else if(!checkPalindrome(s1,revs1))
+            System.out.println("It is NOT Palindrome !!!");
+        
+    }
+    public static boolean checkPalindrome(String s1,String s2)
+    {
+        if(s1.equals(s2))
+        {
+            return true;
+        }
+        else
+
+            return false;
+
+    }
+    
+}
