@@ -1,0 +1,44 @@
+import java.util.*;
+public class Tester {
+    public static void main(String[] args) {
+        String[]fruits={"Durian","Blueberry"};
+        
+        //Initialize queue
+       MyQueue<String>fruitQ=new MyQueue<>(fruits);
+        
+       //Adding 
+        fruitQ.enqueue("Apple");
+        fruitQ.enqueue("Orange");
+        fruitQ.enqueue("Grapes");
+        fruitQ.enqueue("Cherry");
+        
+        //Display queue
+        System.out.println("Queue: "+fruitQ.toString());
+        
+        //Display The top Item
+        System.out.println("Item on the top: "+fruitQ.peek());
+        
+        //Get the queue size
+        System.out.println("Queue Size: "+fruitQ.getSize());
+        
+        //Remove durian
+        fruitQ.dequeue();
+       
+        //get item index-2
+        System.out.println("Item in index 2: "+fruitQ.getElement(2));
+        
+        //Check if it consists of Cherry
+        System.out.println("Is Cherry there? "+fruitQ.contains("Cherry"));
+        
+        //Check if durian is there
+        System.out.println("Is Durian there? "+fruitQ.contains("Durian"));
+        
+        //display with osEmpty condition
+        System.out.print("Content of queue: ");
+        while(!fruitQ.isEmpty())
+        {
+            System.out.print(fruitQ.dequeue() + " ");
+        }
+        System.out.println("");
+    }
+}
