@@ -1,0 +1,63 @@
+import java.util.*;
+public class L7Q3 extends MyQueue {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        MyQueue <Integer>shareQ=new MyQueue<>();
+        MyQueue <Integer>priceQ=new MyQueue<>();
+        int total=0;
+        do{
+            System.out.println("Enter your query (In format 'Buy/Sell x shares at $y each': ");
+            String in=sc.nextLine();
+            String []temp=in.split("[a-zA-z,\\s,\\$]+");
+            int ShareEntered=Integer.parseInt(temp[1]);
+            int PriceEntered=Integer.parseInt(temp[2]);
+
+            
+            if(in.charAt(0)=='B')
+            {
+                System.out.println("Buying now ...");
+                shareQ.enqueue(ShareEntered);
+                priceQ.enqueue(PriceEntered);  
+            }
+            else if(in.charAt(0)=='S')
+            {
+                System.out.println("Selling the shares now...");
+                while(ShareEntered>0)
+                {
+                if(shareQ.isEmpty())
+                {
+                    System.out.println("No Share to sell");
+                    break;
+                }
+                else if(shareQ.peek()>ShareEntered)
+                {
+                    int remaining=shareQ.peek()-ShareEntered;
+                    total+=ShareEntered*(PriceEntered-priceQ.peek());
+                    System.out.println("Total Capital Gain / Loss: "+total);
+                    ShareEntered=0;
+                    MyQueue <Integer>qtemp=new MyQueue<>();
+    
+                    shareQ.dequeue();
+                    qtemp.enqueue(remaining);
+                    while(!shareQ.isEmpty())
+                    {
+                        qtemp.enqueue(shareQ.dequeue());
+                    }
+                    shareQ=qtemp;
+               }
+                else if(shareQ.peek()<ShareEntered)
+                {
+                     total+=shareQ.peek()*(PriceEntered-priceQ.peek());
+                    System.out.println("Total Capital Gain / Loss: "+total);
+                    ShareEntered-=shareQ.peek();
+                    shareQ.dequeue();
+                    priceQ.dequeue();
+                }
+                }
+                
+            }
+            System.out.println("Queue for Share: Queue: "+shareQ.toString());
+                System.out.println("Queue for Price: Queue: "+priceQ.toString());
+        }while(!shareQ.isEmpty());
+    }
+}
