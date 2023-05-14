@@ -1,0 +1,39 @@
+package PriiorityQueue;
+import java.util.Collections;
+import java.util.PriorityQueue;
+
+public class L8Q1 {
+    public static void main(String[] args) {
+        Integer[]arr={4,8,1,2,9,6,3,7};
+        //PriorityQueue<Integer> pq=new PriorityQueue<>(Arrays.asList(arr));
+        PriorityQueue<Integer>pq=new PriorityQueue<>();
+        
+        for(Integer a: arr)
+        {
+            pq.add(a);
+        }
+        //Display all the elements in the priority queue z
+        System.out.println("Element in the priority queue:"+pq.toString());
+                // Retrieving the first element in the priority queue
+        System.out.println("First element retrieved (without removing): " + pq.peek());
+
+        // Checking if the priority queue consists of element "1"
+        System.out.println("Priority queue contains element \"1\": " + pq.contains(1));
+
+        // Getting the current size of the priority queue
+        System.out.println("Current size of the priority queue: " + pq.size());
+
+        // Displaying and removing all elements in the priority queue
+        System.out.println("Removing elements from the priority queue:");
+        while (!pq.isEmpty()) System.out.println(pq.poll());
+
+        // Sorting the priority queue in reverse order
+        PriorityQueue<Integer> pq2 = new PriorityQueue<Integer>(Collections.reverseOrder());
+        for (int num: arr) pq2.add(num);
+        System.out.println("Priority queue sorted in reverse order: " + pq2.toString());
+        //https://www.geeksforgeeks.org/priority-queue-in-reverse-order-in-java/
+        //https://gist.github.com/vermiculus/4014954
+    }
+    }
+
+
