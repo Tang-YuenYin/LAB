@@ -1,0 +1,83 @@
+1) 
+Adjency matric:
+_                _
+|0 0 1 1 0 0 0 0 0|
+|0 0 0 1 0 0 0 0 0|
+|0 0 0 0 1 1 0 0 0|
+|0 0 0 0 1 0 0 0 0|
+|0 0 0 0 0 0 1 0 0|
+|0 0 0 0 0 0 0 1 0|
+|0 0 0 0 0 0 0 1 0|
+|0 0 0 0 0 0 0 0 1|
+|0 0 0 0 0 0 0 0 0|
+-                 -
+Adjency List:
+A   C,D
+B   D
+C   F,E
+D   E
+E   G
+F   H
+G   H
+H   I
+I
+
+2)
+{0 0 1 1 0 0 0 0 0}
+{0 0 0 1 0 0 0 0 0}
+{0 0 0 0 1 1 0 0 0}
+{0 0 0 0 1 0 0 0 0}
+{0 0 0 0 0 0 1 0 0}
+{0 0 0 0 0 0 0 1 0}
+{0 0 0 0 0 0 0 1 0}
+{0 0 0 0 0 0 0 0 1}
+{0 0 0 0 0 0 0 0 0}
+Adjacency matrix
+
+3)
+//Vertex class
+class Vertex<T extends Comparable<T>, N extends Comparable <N>> {
+   T vertexInfo;
+   int indeg;
+   int outdeg;
+   Vertex<T,N> nextVertex;
+   Edge<T,N> firstEdge;
+    
+   public Vertex() {
+      vertexInfo=null;
+      indeg=0;
+      outdeg=0;
+      nextVertex = null;
+      firstEdge = null;
+   }
+	
+   public Vertex(T vInfo, Vertex<T,N> next) {
+      vertexInfo = vInfo;
+      indeg=0;
+      outdeg=0;
+      nextVertex = next;
+      firstEdge = null;
+   }	
+}
+
+//Edge Class
+class Edge<T extends Comparable<T>, N extends Comparable <N>> {
+	Vertex<T,N> toVertex;
+	N weight;
+	Edge<T,N> nextEdge;
+	
+	public Edge()	{
+		toVertex = null;
+		weight = null;
+		nextEdge = null;
+	}
+	
+	public Edge(Vertex<T,N> destination, N w, Edge<T,N> a)	{
+		toVertex = destination;
+		weight = w;
+		nextEdge = a;
+	}
+
+}
+
+Adjacency list
