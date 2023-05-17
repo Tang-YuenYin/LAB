@@ -1,1 +1,21 @@
-
+1) queue : FIFO, Priority Queueu : assigned with prioirties 
+2) -printing priority based on position of sender in a department
+   -emergency department in hospital
+   -airport check in services
+3)(a) peek() gives us: C++
+  (b) C++
+      Fortran
+      Java
+      Python
+  (c)Fortran
+     Python
+     Java
+  (d)Fortran
+     Python
+  (e)false
+  (f)Fortran
+     Python
+4)(a) Compare the length of the newly added element, return false if s1 is shorter than s2, return true if s1 is longer than s2
+  (b) Ali
+      Jason
+      Muhamad
