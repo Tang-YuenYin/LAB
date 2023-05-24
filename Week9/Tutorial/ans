@@ -22,16 +22,28 @@ G   H
 H   I
 I
 
+When to use matrix? When to use list
+=Choose based on graph
+=if 0 more than 1, list is better (memory wastage)
+=if 1 almost equivalent to 0, both is fine
+=1 more than 80% use matrix ( it is easier to use matrix as visualisation is easier)
+
+-List: Memory consumption (Adjency matrix too many 0)
+
+-We choose based on memory consumption and energy consumption 
+-0 means nothing but it takes up memory consumption not very good
+
 2)
-{0 0 1 1 0 0 0 0 0}
-{0 0 0 1 0 0 0 0 0}
-{0 0 0 0 1 1 0 0 0}
-{0 0 0 0 1 0 0 0 0}
-{0 0 0 0 0 0 1 0 0}
-{0 0 0 0 0 0 0 1 0}
-{0 0 0 0 0 0 0 1 0}
-{0 0 0 0 0 0 0 0 1}
-{0 0 0 0 0 0 0 0 0}
+int[][] matrix={
+{0,0,1,1,0,0,0,0,0}
+{0,0,0,1,0,0,0,0,0}
+{0,0,0,0,1,1,0,0,0}
+{0,0,0,0,1,0,0,0,0}
+{0,0,0,0,0,0,1,0,0}
+{0,0,0,0,0,0,0,1,0}
+{0,0,0,0,0,0,0,1,0}
+{0,0,0,0,0,0,0,0,1}
+{0,0,0,0,0,0,0,0,0}};
 Adjacency matrix
 
 3)
@@ -81,3 +93,19 @@ class Edge<T extends Comparable<T>, N extends Comparable <N>> {
 }
 
 Adjacency list
+
+
+String[][] vert={"A","B","C","D","E","F","G","H","I"};
+
+for(String str:vert)
+myGraph.addVertex(str);
+myGraph.addEdge("A","C",1);
+myGraph.addEdge("A","D",1);
+myGraph.addEdge("B","D",1);
+myGraph.addEdge("C","E",1);
+myGraph.addEdge("C","F",1);
+myGraph.addEdge("D","E",1);
+myGraph.addEdge("E","G",1);
+myGraph.addEdge("F","H",1);
+myGraph.addEdge("G","H",1);
+myGraph.addEdge("H","I",1);
