@@ -1,0 +1,34 @@
+1)The nethod runs infinitely and Stack Overfow Error occurs
+
+2)The method runs infinitely and causes a StackverflowError when the parameter is greater than 0 (positive integer)
+
+3)public static String reverse(String str)
+{
+  if(str.length()==0)
+  return "";
+  else
+  return str.charAt(str.length()-1)+reverse(str.sunstring(0,str.length()-1);
+}
+
+4)public static int count(int n)
+{
+  if(n==1) //Base Case
+  {
+    return n;
+  }
+  else
+  {
+    return n+ count(n-1);//REcursive case
+  }
+}
+
+5)public static String printDigit(int n)
+{
+  if(n==0)
+  {
+    return="";
+  }
+  else {
+    return printDigit(n/10)+((n%10)+"")+" ";
+  }
+}
