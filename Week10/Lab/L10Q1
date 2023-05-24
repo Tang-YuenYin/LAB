@@ -1,1 +1,32 @@
-
+public class L10Q1 {
+    public static void main(String[] args) {
+        System.out.println(substituteAI("flabbergasted"));   
+        System.out.println(substituteAI("Astrounaut"));
+    }
+    
+    public static String substituteAI(String s)
+    {
+        String result="";
+        //base case: string length ==0
+        if(s.length()<1)
+            result= "";
+        
+        //Recursive case
+        else 
+        {
+            char letter =s.charAt(0);
+            String remaining=s.substring(1);
+            
+            if(letter=='a')
+            {
+                result= "i"+substituteAI(remaining);
+            }
+            
+            else
+            {
+                result= letter+substituteAI(remaining);
+            }
+        }
+        return result;
+    }
+}
