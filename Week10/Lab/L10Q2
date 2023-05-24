@@ -1,1 +1,32 @@
+import java.util.Scanner;
+public class L10Q2 {
+    public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    
+        System.out.print("Input String: ");
+        String in=sc.nextLine();
+        
+        System.out.println("Output Permutation: ");
+        permute(in);
+}
+    
+    public static void permute(String s)
+    {
+        permute("",s);
 
+    }
+    
+        public static void permute(String beginningString, String endingString) {
+        //System.out.println(beginningString + ", " + endingString);
+        // Base case
+        if (endingString.length() <= 1) {
+            System.out.println(beginningString + endingString);
+        }
+        // Recursive case
+        else {
+            for (int i = 0; i < endingString.length(); i++) {
+                String newString = endingString.substring(0, i) + endingString.substring(i + 1);
+                permute(beginningString + endingString.charAt(i), newString);
+            }
+        }
+        }
