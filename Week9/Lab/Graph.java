@@ -29,8 +29,27 @@ public class Graph<T extends Comparable<T>, N extends Comparable<N>> extends Wei
         return false;
     }
     
+    //Q1
+    //This is enough. 
+    //A -> B
+    //B -> A
         public boolean addUndirectedEdge(T source, T destination) {
         return addEdge(source, destination) && addEdge(destination, source);
     }
+    
+    /*
+    Alternative:
+    public boolean addUndirectedEdge(T v1,T v2,N w)
+    {
+        boolean a,b;
+        a=addEdge(v1,v2,w);
+        b=adddEdge(v2,v1,w);
+        return(a&&b);
+     }
+    */
+    
+    //Q2
+    public 
+    
        
 }
