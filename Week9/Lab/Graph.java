@@ -40,7 +40,23 @@ public class Graph<T extends Comparable<T>, N extends Comparable<N>> extends Wei
         public boolean addUndirectedEdge(T source, T destination) {
         return addEdge(source, destination) && addEdge(destination, source);
     }
+    /*
+    public boolean ddEdge(T source, T destination)
+    {
+        return super.addEdge(source,destination,1);
+    }
     
+    public boolean addUndirectedEdge(T v1,T v2)
+    {
+        boolean a,b;
+        a=addEdge(v1,v2,1);
+        b=addEdge(v2,v1,1);
+        return(a&&b);
+        
+        
+    }
+    */
+    //Q1
     /*
     Alternative:
     public boolean addUndirectedEdge(T v1,T v2,N w)
