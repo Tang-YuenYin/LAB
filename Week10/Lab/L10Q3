@@ -14,3 +14,18 @@ public class L10Q3 {
         return (x * exponent(x, --m));
     }
 }
+
+//Ans
+    public static long exponent(int x, int m) {
+        // Base case
+        if (m == 0) {
+            return 1;
+        }
+        if(m==1)
+        {
+        return x;
+        }
+        
+        // Recursive case
+        return (x * exponent(x, --m));
+    }
