@@ -30,3 +30,27 @@ public class L10Q1 {
         return result;
     }
 }
+
+//Ans: 
+public static void main(String[]args)
+{
+System.out.println(substituteAI("flabbergasted"));   
+        System.out.println(substituteAI("Astrounaut"));
+}
+public sttaic String subsititueAI(STring str)
+{
+//Base Case
+if(str.length==0)
+{
+    return str;
+}
+//Recursive case
+else if(str.charAt(0)=='a')
+{
+return 'i'+substituteAI(str.substring(1);
+}
+else
+{
+return str.charAt(0)+substituteAI(str.substring(1);
+}
+}
