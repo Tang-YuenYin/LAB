@@ -1,6 +1,13 @@
-1)The nethod runs infinitely and Stack Overfow Error occurs
+1)The method runs infinitely and Stack Overfow Error occurs
+//First time when do recursion define base
+//Ans: StackOverFlow error-never reaches the base case bcs n=0. In the base case n=1. The recursive method never reach it's base case so it will keep growing.
 
-2)The method runs infinitely and causes a StackverflowError when the parameter is greater than 0 (positive integer)
+2)//Ask why f() still can run the method?
+The method runs infinitely and causes a StackOverflowError when the parameter is greater than 0 (positive integer)
+//Ans: When the argument passed in to the method is non-negative(n>-1), the stopiping condition(n==0) will never be reached. f9) become an infinite recursive method
+//Loop will stop bcs got i++
+//recursion does not stop bcs it keep on counting.
+//It will take up your memory;high memory consumption
 
 3)public static String reverse(String str)
 {
@@ -9,7 +16,15 @@
   else
   return str.charAt(str.length()-1)+reverse(str.sunstring(0,str.length()-1);
 }
-
+//Ans:
+public static String reverse(String str)
+{
+  if((null==str||(str.length)<=1))
+  {
+    return str;
+  }
+  return reverse(str.substring(1))+str.charAt(0);}
+  
 4)public static int count(int n)
 {
   if(n==1) //Base Case
@@ -18,8 +33,23 @@
   }
   else
   {
-    return n+ count(n-1);//REcursive case
+    return n+ count(n-1);//Recursive case
   }
+}
+
+//Ans:
+public static int sum(int num)
+{
+int result;
+  if(num==1) //Base Case
+  {
+    result=1;
+  }
+  else
+  {
+    result= num+ sum(num-1);//Recursive case
+  }
+  return result;
 }
 
 5)public static String printDigit(int n)
@@ -32,3 +62,17 @@
     return printDigit(n/10)+((n%10)+"")+" ";
   }
 }
+
+//Ans:
+public void printDigit(int n)
+{
+if(n>10)
+{
+printDigit(n/10);
+System.out.print(n%10+" ");
+}
+else
+System.out.print(n%10+" ");
+}
+
+Tutorial 8(b) REcursion (Application)
