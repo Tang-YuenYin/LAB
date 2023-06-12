@@ -26,6 +26,9 @@ Binary search will need to loop through 1 time only in order to get 54.
 1 7 8 9 56 90 125 237 653
 
 (c)BUbble Sort
+first
+8 90 7 56 125 237 9 1 653
+8 7 90 56 125 237 9 1 653
 
 3) Merge Sort
 4) Binary search
