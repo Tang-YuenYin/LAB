@@ -1,1 +1,32 @@
-1) Linear search takes
+1) Lets say we want to search for 45 and 54
+Linear search needs to loop through 8 times in order to  notice that 45 does not exist.
+Binary search needs to loop through 4 times in order to nottice that 45 does not exist.
+
+Linear search will need to loop through 4 times in order to get 54.
+Binary search will need to loop through 1 time only in order to get 54.
+
+2)
+(a)Selection Sort
+90 8 7 56 125 237 9 1 653
+1 8 7 56 125 237 9 90 653
+1 7 8 56 125 237 9 90 653
+1 7 8 9 125 237 56 90 653
+1 7 8 9 56 237 125 90 653
+1 7 8 9 56 90 125 237 653
+
+(b)Insertion sort
+90 8 7 56 125 237 9 1 653
+8 90 7 56 125 237 9 1 653
+7 8 90 56 125 237 9 1 653
+7 8 56 90 125 237 9 1 653
+7 8 56 90 125 237 9 1 653
+7 8 56 90 125 237 9 1 653
+7 8 9 56 90 125 237 1 653
+1 7 8 9 56 90 125 237 653
+1 7 8 9 56 90 125 237 653
+
+(c)BUbble Sort
+
+3) Merge Sort
+4) Binary search
+5) Linear Search
